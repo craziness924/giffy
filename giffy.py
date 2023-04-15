@@ -13,18 +13,15 @@ def make_gif(input, duration):
     for i, file in enumerate(os.scandir(input), start=0):
         file_type = os.path.splitext(file.path)[1]
         
-        if file_type not in [".png", ".jpeg"] or file_type == ".gif":
+        if file_type not in [".png", ".jpeg", ".gif"] or file.path == output:
             continue
 
         img = Image.open(file.path)
 
-        if i == 0:
-            start_image = img
-        else:
-            images.append(img)
+        images.append(img)
         
+    start_image = images[0]
 
-        
     start_image.save(output, save_all=True, append_images=images, duration=float(duration), loop=0)
     
 
