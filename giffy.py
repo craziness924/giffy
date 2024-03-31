@@ -26,7 +26,7 @@ def make_gif(input, duration):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("Giffy", description="Makes gif from list of images")
     parser.add_argument("--input", help="Folder containing images")
-    parser.add_argument("--dur", required=False, default=400, help="Time (in milliseconds) to display each frame")
+    parser.add_argument("--dur", required=False, default=400, help="Time (in milliseconds) to display each frame (default: 400ms)")
 
     args = parser.parse_args()
 
